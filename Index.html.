@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Zaki ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Shadows+Into+Light&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+            color: #ffffff; text-align: center; overflow-x: hidden;
+            touch-action: none; 
+        }
+
+        header { padding: 40px 20px; position: relative; }
+        h1 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: #ffafbd; margin: 0; z-index: 2; position: relative; }
+
+        .sticker { position: absolute; font-size: 2.5rem; pointer-events: none; z-index: 1; opacity: 0.8; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3)); }
+        .s1 { top: 10px; left: 10%; transform: rotate(-15deg); }
+        .s2 { bottom: 20px; right: 10%; transform: rotate(20deg); }
+        .s3 { top: 50%; left: 5%; transform: rotate(10deg); font-size: 1.5rem; }
+
+        .envelope-wrapper { height: 380px; display: flex; justify-content: center; align-items: center; margin: 10px 0; }
+        .envelope { position: relative; width: 280px; height: 180px; background: #f0f0f0; cursor: pointer; transition: 0.5s; z-index: 10; }
+        .envelope:before { content: ""; position: absolute; top: 0; z-index: 2; border-top: 100px solid #e0e0e0; border-left: 140px solid transparent; border-right: 140px solid transparent; transform-origin: top; transition: transform 0.5s 0.3s; }
+        .envelope:after { content: ""; position: absolute; top: 0; z-index: 3; border-top: 0px solid transparent; border-left: 140px solid #f0f0f0; border-right: 140px solid #f0f0f0; border-bottom: 180px solid #f0f0f0; }
+        .heart-btn { position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; background: #ff4b2b; z-index: 4; transform: translate(-50%, -20%) rotate(45deg); transition: 0.5s 0.8s; }
+        .heart-btn:before, .heart-btn:after { content: ""; position: absolute; width: 40px; height: 40px; background: #ff4b2b; border-radius: 50%; }
+        .heart-btn:before { top: -20px; left: 0; }
+        .heart-btn:after { left: -20px; top: 0; }
+
+        .letter { position: absolute; bottom: 0; left: 10px; width: 260px; height: 160px; background: white; z-index: 1; transition: 0.5s; padding: 20px; box-sizing: border-box; color: #333; text-align: left; font-family: 'Shadows Into Light', cursive; font-size: 1.1rem; box-shadow: 0 0 10px rgba(0,0,0,0.1); line-height: 1.4; overflow-y: auto; }
+        .open.envelope:before { transform: rotateX(180deg); z-index: 0; }
+        .open .letter { transform: translateY(-160px); z-index: 2; height: 280px; }
+        .open .heart-btn { transform: translate(-50%, -200%) rotate(45deg) scale(0.5); opacity: 0; }
+
+        .valentine-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); margin: 20px; padding: 30px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); position: relative; z-index: 10; min-height: 150px; display: flex; flex-direction: column; justify-content: center; }
+        .btn-box { height: 80px; position: relative; display: flex; justify-content: center; align-items: center; gap: 20px;}
+        .btn { padding: 12px 35px; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; }
+        #yesBtn { background: #2ecc71; color: white; }
+        #noBtn { background: #e74c3c; color: white; position: absolute; }
+
+        .gallery { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 500px; margin: 0 auto; position: relative; z-index: 10; }
+        .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; border: 2px solid rgba(255,255,255,0.3); }
+
+        .star { position: fixed; background: white; border-radius: 50%; z-index: -1; animation: twinkle var(--duration) infinite; }
+        .trail-heart { position: fixed; color: #ff4b2b; font-size: 20px; pointer-events: none; z-index: 999; animation: flyUp 1s forwards; }
+        @keyframes flyUp { to { transform: translateY(-100px); opacity: 0; } }
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="sticker s1">🧸</div>
+        <div class="sticker s2">✨</div>
+        <h1>Hi Zaki!</h1>
+        <p style="letter-spacing: 2px; font-weight: bold;">TAP THE HEART ❤️</p>
+    </header>
+
+    <div class="envelope-wrapper">
+        <div class="envelope" onclick="openLetter(this)">
+            <div class="heart-btn"></div>
+            <div class="letter">
+                Zaki love you so much mera shonu,<br><br>
+                I am so truly thankful to have found you. Such a strong and handsome man like you. You make me feel safe, strong, loved, appreciated. It’s so much more than just happiness and sadness, and I am so lucky to be loved by you.<br><br>
+                You manage to calm me, comfort me and make sure that I’m okay. As independent as I may be, I need you in my life. You make me into who I am, you make me whole. I hope you never forget how appreciative I am of you.<br><br>
+                You aren’t just my partner you are my entire family. In a world that can feel so big and empty, you are the only one I have, and the only one I ever want. I’m never leaving your side because my heart has finally found its permanent home in you and mujhe pata hai ki Zaki hai, Zaki sambhal lega that thought gets me through everything.<br><br>
+                Kuch bhi ho jaye, I am yours and I am never going anywhere. I’ll always love you hamesha zaki you’ll always be my happy home. Tu hai te sab hai tu nahi toh kuch nahi &lt;3
+            </div>
+        </div>
+    </div>
+
+    <div class="valentine-card">
+        <div class="sticker s3">💍</div>
+        <div id="askContainer">
+            <h2 style="font-family: 'Dancing Script'; font-size: 2.2rem; color: #ffafbd;">Will you be my Valentine?</h2>
+            <div class="btn-box">
+                <button class="btn" id="yesBtn" onclick="win()">YES!</button>
+                <button class="btn" id="noBtn" ontouchstart="moveBtn()" onmouseover="moveBtn()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="https://i.ibb.co/5Xj38SZ4/IMG-20260204-012301-441.jpg">
+        <img src="https://i.ibb.co/4LgYhqy/IMG-20260204-012235-606.jpg">
+        <img src="https://i.ibb.co/B1ZkBFK/IMG-20260204-012237-891.jpg">
+        <img src="https://i.ibb.co/zjKZ1DB/IMG-20260204-012255-596.jpg">
+    </div>
+
+    <script>
+        function openLetter(el) { el.classList.toggle('open'); }
+        
+        function moveBtn() {
+            var btn = document.getElementById('noBtn');
+            btn.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+            btn.style.top = Math.random() * (window.innerHeight - 150) + 'px';
+        }
+
+        function win() {
+            document.querySelector('.valentine-card').innerHTML = 
+            `<h2 style="font-family: 'Dancing Script'; font-size: 2.5rem; color: #ffafbd; margin:0;">
+            Yay! I knew you'd say yes! ❤️<br>I love you forever, Zaki!</h2>`;
+            
+            // Create celebration confetti
+            for(let i=0; i<30; i++) {
+                setTimeout(() => {
+                    let heart = document.createElement('div');
+                    heart.className = 'trail-heart';
+                    heart.innerHTML = '💖';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 1000);
+                }, i * 100);
+            }
+        }
+
+        document.addEventListener('touchstart', (e) => {
+            let heart = document.createElement('div');
+            heart.className = 'trail-heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = e.touches[0].clientX + 'px';
+            heart.style.top = e.touches[0].clientY + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        });
+
+        for (let i = 0; i < 40; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 'px';
+            star.style.width = size; star.style.height = size;
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            document.body.appendChild(star);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #1a1a1a;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        /* Star & Floating Heart Background */
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle var(--duration) infinite;
+        }
+
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+        .floating-heart {
+            position: fixed;
+            color: rgba(255, 175, 189, 0.4);
+            font-size: 20px;
+            z-index: -1;
+            user-select: none;
+            pointer-events: none;
+            animation: floatUpBackground var(--duration) linear infinite;
+        }
+
+        @keyframes floatUpBackground {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Card Styling */
+        .valentine-card {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 175, 189, 0.2);
+            border: 1px solid rgba(255, 175, 189, 0.3);
+            z-index: 10;
+            max-width: 450px;
+            width: 90%;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Countdown Timer Styling */
+        #timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            font-family: 'Shadows Into Light', cursive;
+        }
+        .time-box {
+            background: rgba(255, 75, 43, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 60px;
+            border: 1px solid rgba(255, 175, 189, 0.2);
+        }
+        .time-num {
+            display: block;
+            font-size: 1.8rem;
+            color: #ffafbd;
+            font-weight: bold;
+        }
+        .time-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .btn {
+            background: #ff4b2b;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-family: 'Dancing Script', cursive;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: #ffafbd;
+        }
+
+        .rules-section {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px dashed #ffafbd;
+            text-align: left;
+        }
+
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rules-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #ffdae0;
+        }
+
+        .rules-list li::before {
+            content: "📜";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .trail-heart {
+            position: fixed;
+            font-size: 2rem;
+            animation: winFloat 2s linear forwards;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes winFloat {
+            to { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="valentine-card">
+        <div class="sticker s3" style="font-size: 3rem;">💍</div>
+        <div id="askContainer">
+            <h2 style="font-family: 'Dancing Script'; font-size: 2.5rem; color: #ffafbd; margin-bottom: 10px;">Will you be my Valentine?</h2>
+            
+            <div id="timer">
+                <div class="time-box"><span class="time-num" id="days">00</span><span class="time-label">Days</span></div>
+                <div class="time-box"><span class="time-num" id="hours">00</span><span class="time-label">Hrs</span></div>
+                <div class="time-box"><span class="time-num" id="minutes">00</span><span class="time-label">Min</span></div>
+                <div class="time-box"><span class="time-num" id="seconds">00</span><span class="time-label">Sec</span></div>
+            </div>
+
+            <div class="rules-section">
+                <h2 style="font-family: 'Dancing Script'; color: #ffafbd; text-align: center; margin-top: 0;">Rules to be my Valentine 📋</h2>
+                <ul class="rules-list">
+                    <li><strong>Rule #1:</strong> You must provide unlimited forehead kisses upon request.</li>
+                    <li><strong>Rule #2:</strong> You are not allowed to be "too handsome" in public.</li>
+                    <li><strong>Rule #3:</strong> In every argument, I am right.</li>
+                    <li><strong>Rule #4:</strong> You must agree you love me more, though I love you hamesha.</li>
+                    <li><strong>Rule #5:</strong> No refunds or exchanges. Stuck with me forever.</li>
+                </ul>
+            </div>
+
+            <div class="btn-box">
+                <button class="btn" id="yesBtn" onclick="win()">YES!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // 1. Countdown Logic
+        const targetDate = new Date("June 15, 2026 00:00:00").getTime();
+
+        const updateTimer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(updateTimer);
+                document.getElementById("timer").innerHTML = "<h3>The Big Day is Here! ❤️</h3>";
+            }
+        }, 1000);
+
+        // 2. Stars and Hearts Background
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size; star.style.height = size;
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            document.body.appendChild(star);
+        }
+
+        for (let i = 0; i < 15; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.setProperty('--duration', Math.random() * 10 + 10 + 's');
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(heart);
+        }
+
+        // 3. Success Function
+        function win() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ffafbd', '#ff4b2b', '#ffffff']
+            });
+
+            document.querySelector('.valentine-card').innerHTML = 
+            `<div style="padding: 20px;">
+                <div style="font-size: 4rem; margin-bottom: 20px;">💖</div>
+                <h2 style="font-family: 'Dancing Script'; font-size: 2.5rem; color: #ffafbd; margin:0;">
+                Yay! I knew you'd say yes! ❤️<br><br>I love you forever, Zaki!</h2>
+            </div>`;
+            
+            for(let i=0; i<30; i++) {
+                setTimeout(() => {
+                    let heart = document.createElement('div');
+                    heart.className = 'trail-heart';
+                    heart.innerHTML = '💖';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 2000);
+                }, i * 200);
+            }
+        }
+    </script>
+</body>
+</html>
